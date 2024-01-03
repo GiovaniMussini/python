@@ -1,0 +1,33 @@
+import os
+
+lista = []
+
+while True:
+    print("Selecione uma opção")
+    opcao = input("[i]nserir [a]pagar [l]istar: ").lower()
+    
+    if opcao.startswith('i'):
+        os.system('cls')
+        item = input("Valor: ")
+        lista.append(item)
+
+    elif opcao.startswith('a'):
+        os.system('cls')
+        indice = input("Qual indice apagar: ")
+        
+        try:
+            indice_int = int(indice)
+            del lista[indice_int]
+        except IndexError:
+            print("Não é possivel apagar esse indice!")
+        except ValueError:
+            print("Digite apenas números")
+    
+    elif opcao.startswith('l'):
+        os.system('cls')
+
+        if len(lista) == 0:
+            print("A lista está vazia")
+
+        for i, valor in enumerate(lista):
+            print(i, valor)
