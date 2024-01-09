@@ -4,6 +4,7 @@ user = {}
 
 def create_user():
     os.system('cls')
+
     print('Criar usuario')
     name = input('Digite seu nome: ')
     password = input('Digite seua senha: ')
@@ -11,10 +12,14 @@ def create_user():
 
 def login(user):
     os.system('cls')
+    
     print('Login')
     name = input('Digite seu nome: ')
     password = input('Digite sua senha: ')
 
+    if name == '':
+         print('Seu nome não pode estar vazio')
+     
     if name in user and user[name] == password:
          print('Login feito')
          
@@ -28,6 +33,7 @@ while True:
      print('3 - sair')
 
      user_choice_str = input('Escolha uma opção: ')
+     
      try:
           user_choice = int(user_choice_str)
 
@@ -45,5 +51,6 @@ while True:
                print('Opção inválida')
      except ValueError:
           print('Digite apenas números')
-     except:
+     except Exception:
           print('Erro descnhecido')
+
