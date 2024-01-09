@@ -44,6 +44,6 @@ while True:
           else:
                print('Opção inválida')
      except ValueError:
-          print('Digite apenas nmeros')
+          print('Digite apenas números')
      except:
           print('Erro descnhecido')
