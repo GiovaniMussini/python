@@ -1,18 +1,23 @@
 import os
 
 user = {}
-
+          
 def create_user():
     os.system('cls')
 
     print('Criar usuario')
     name = input('Digite seu nome: ')
     password = input('Digite seua senha: ')
+    if name in user: 
+          print('Impossível criar o usuário, esse nome já existe')
+          return False
+    
     return name, password
+
 
 def login(user):
     os.system('cls')
-    
+
     print('Login')
     name = input('Digite seu nome: ')
     password = input('Digite sua senha: ')
@@ -25,6 +30,7 @@ def login(user):
          
     else:
          print('Usuário ou senha incorreto')
+         return False
      
 while True:
      
@@ -41,16 +47,26 @@ while True:
                name, password = create_user()
                user[name] = password
                print('Cadastro bem sucedido')
+
           elif user_choice == 2:
-               login(user)
+               if login(user) is False:
+                    continue
                break
+
           elif user_choice == 3:
                print('Login encerrado')
                break
+
           else:
                print('Opção inválida')
+
+          
      except ValueError:
           print('Digite apenas números')
-     except Exception:
+
+     except TypeError:
+          continue
+
+     except Exception as error:
           print('Erro descnhecido')
 
