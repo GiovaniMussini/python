@@ -1,0 +1,7 @@
+Error: Erro no log (LogFiliMixin)
+success: Log feito com sucesso (LogFiliMixin)
+
+success: galaxy_s está ligado (Smartphone)
+Error: galaxy_s está desligado (Smartphone)
+success: iPhone está ligado (Smartphone)
+Error: iPhone está desligado (Smartphone)
