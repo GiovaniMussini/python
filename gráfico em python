@@ -1,0 +1,29 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+gas = pd.read_csv('gas_prices.csv') # Endereço do arquivo
+print(gas)
+lista_pais = ['Australia', 'France', 'Mexico', 'Germany']
+
+for pais in gas:
+    if pais in lista_pais:
+        plt.plot(gas['Year'], gas[pais], label=pais, marker='.')
+
+
+# plt.plot(gas['Year'], gas['Australia'], 'r.-', label='Australia')
+# plt.plot(gas['Year'], gas['Italy'], 'b.-', label='Italia')
+# plt.plot(gas['Year'], gas['USA'], 'g.-', label='Estados Unidos')
+# plt.plot(gas['Year'], gas['Japan'], 'y.-', label='Japão')
+
+plt.title('Valor do combustível')
+
+plt.xticks(gas['Year'][::2])
+plt.xlabel('Ano')
+
+plt.ylabel('US$')
+
+plt.legend()
+plt.savefig('País.png')
+
+plt.show() 
